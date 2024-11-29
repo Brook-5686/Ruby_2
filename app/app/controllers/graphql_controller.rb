@@ -1,6 +1,6 @@
 class GraphqlController < ApplicationController
   
-  protect_from_forgery with: :null_session
+  protect_from_forgery with: :exception
 
   def execute
     result = GraphqlTutorialSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
